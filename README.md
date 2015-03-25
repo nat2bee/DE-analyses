@@ -1,1 +1,37 @@
 # DE-analyses
+
+Scripts to help in differential expression analyses.
+
+- # Corset_cluster2transcript.py
+  Is to be used after running the **Corset** programa (N. M. Davidson and A. Oshlack. Corset: enabling differential gene expression analysis for de novo assembled transcriptomes. Genome Biology 2014, 15:410  doi:10.1186/s13059-014-0410-6). 
+
+  The resulting count matrix in **Corset** are given with the clusters IDs and it might be necessary to recover the transcripts ID (the same usually in the fasta file) after running the DE analyses. This script uses a list of differentially expressed Cluster IDs (one per line) and the ***-clusters.txt*** (output from **Corset**) as inputs and otputs a table (tab delimited) with the DE transcript ID and its cluster.
+  
+  **Usage:**
+  Corset_cluster2transcript.py -c <input1> -r <input2> -o <outputfile>
+
+  **Where:**
+- input1 = List of Cluster IDs (one per line)
+- input2 = Result table from Corset containing the clusters and transcripts IDs (*-clusters.txt*)
+- outputfile = Table with the cluster ID in your Input1 file and the transcript id present in this cluster
+ 
+  **Opitions:**
+- h = usage info
+  
+  
+- # Compare_DE.py
+  It compares two matrix containing differenttialy expressed data to find similarities between  them. 
+
+  If you run differentially expression analyses in two different programs and want to compare the results this script can be usefull. It takes as input the two files you want to compare and outputs the common and diffferent (optional) transcripts of the input1 in input2.
+  
+    **Usage:**
+  Usage: compare_DE.py -1 <input1> -2 <input2> -o <outprefix> 
+
+  **Where:**
+- input1 = File with the transcripts you want to find in the input2 (one per line). It can be another matrix count file or only a list of transcripts ids
+- input2 = Matrix file with counts of each transcripts to be compared with input 1
+- outprefix = Prefix for the output file(s)
+
+  **Opitions:**
+- d = Print an output of counts for the transcripts that are different in both inputs (***-diff.txt***)
+- h = usage info
