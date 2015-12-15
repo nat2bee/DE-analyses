@@ -55,3 +55,38 @@ Scripts to help in differential expression analyses.
   **Opitions:**
 - h = usage info 
 
+
+- # Up_Annotation.py
+ 
+Take a list of transcripts names and print their annotation information.
+
+Developed (in my case) to use with a list of deferentially expressed transcripts to find 
+the information from an annotation in the **Annocript** program results (Musacchia et al. Annocript: a flexible pipeline for the annotation of transcriptomes able to identify putative long noncoding RNAs. Bioinformatics 2015, 31(13):2199-201. doi: 10.1093/bioinformatics/btv106). 
+
+**Usage:**
+Up_Annotation.py -i *list* -a *annotation* -o *output*
+
+**Where:** 
+- list = list with all the transcripts Ids to find in the table (one per line)
+- output = the name of the output to save the table with the information of the transcripts of interest
+- annotation = table result from **Annocript** containing the information from annotation (*...filt_ann_out.txt*)
+
+**Options:**
+-h for usage help
+
+
+- # Up_Annotation2.py
+
+The same as **Up_Annotation.py** but to work with tables after R edition (include cluster info).
+
+**Usage:**
+Up_Annotation2.py -i *list* -a *annotation* -o *output*
+
+**Where:** 
+- list = list with all the transcripts Ids to find in the table (one per line)
+- output = the name of the output to save the table with the information of the transcripts of interest
+- annotation = table result from **Annocript** containing the information from annotation (*...filt_ann_out.txt*)
+
+**Options:**
+-h for usage help
+
